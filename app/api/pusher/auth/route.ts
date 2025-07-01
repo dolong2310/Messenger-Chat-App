@@ -1,7 +1,7 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { pusherServer } from "@/lib/pusher";
-import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
+import { NextRequest, NextResponse } from "next/server";
+import { authOptions } from "../../auth/[...nextauth]/authOptions";
 
 export async function POST(request: NextRequest) {
   const session = await getServerSession(authOptions);
